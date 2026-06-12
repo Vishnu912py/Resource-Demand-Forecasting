@@ -145,7 +145,7 @@ Two research papers are included in the `MSTL Decomposition/` folder for those w
 
 - **MSTL Paper** — The original research on Multi-Seasonal-Trend decomposition using LOESS
 - **Prophet Paper** — Facebook's forecasting tool designed for business time series with holidays and missing data
-
+- **https://nixtlaverse.nixtla.io/hierarchicalforecast/examples/introduction.html**
 ---
 
 ## 💡 Who Is This For?
