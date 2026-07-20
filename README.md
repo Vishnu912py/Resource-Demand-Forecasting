@@ -21,38 +21,50 @@ This repo teaches you how to do all of that — from scratch.
 
 ---
 
-## 📁 What's Inside This Repository
+## 📁 Complete Repository Structure
 
 ```
-time_series_forecasting/
+Resource-Demand-Forecasting/
 │
-├── 📂 Basic Time Series Analysis Concepts/   ← Start here!
-│   ├── 1.  Intro to Time Series
-│   ├── 2.  Stationarity
-│   ├── 3.  Box-Cox Transform
-│   ├── 4.  Seasonality
-│   ├── 5.  Decomposition
-│   ├── 6.  Autocorrelation
-│   ├── 7.  Partial Autocorrelation
-│   ├── 9.  Basic Forecasting Techniques
-│   ├── 10. Simple Exponential Smoothing
-│   ├── 11. Holt's Linear Trend Model
-│   ├── 12. Holt-Winters Forecasting
-│   ├── 13. Residuals
-│   ├── 14. Cross Validation
-│   ├── 15. Autoregression (AR)
-│   ├── 16. Moving Average (MA) Models
-│   ├── 17. ARIMA
-│   ├── 18. SARIMA
-│   └── 19. Fourier Series & Harmonic Regression
+├── 📚 README.md (this file)
 │
-├── 📂 Implementation/
-│   └── Brazilian Logistics Data (Where ARIMA Fails)  ← Real-world case study
+├── 📂 Basic Time Series Analysis Concepts/     ← START HERE! 20 comprehensive notebooks
+│   ├── 1.  Intro to time series.ipynb
+│   ├── 2.  Stationarity.ipynb
+│   ├── 3.  Box-Cox Transform.ipynb
+│   ├── 4.  Seasonality.ipynb
+│   ├── 5.  Decomposition.ipynb
+│   ├── 6.  Autocorrelation.ipynb
+│   ├── 7.  Partial Autocorrelation.ipynb
+│   ├── 9.  Basic Forecasting Techniques.ipynb
+│   ├── 10. Simple Exponential Smoothing.ipynb
+│   ├── 11. Holt's Linear Trend Model.ipynb
+│   ├── 12. Holt Winters Forecasting.ipynb
+│   ├── 13. Residuals.ipynb
+│   ├── 14. Crossvalidation.ipynb
+│   ├── 15. Autoregression.ipynb
+│   ├── 16. Moving Average Models.ipynb
+│   ├── 17. ARIMA.ipynb
+│   ├── 18. SARIMA.ipynb
+│   ├── 19. Fourier Series & Harmonic Regression.ipynb
+│   └── AirPassengers.csv               ← Classic benchmark dataset
 │
-└── 📂 MSTL Decomposition/
-    ├── MSTL using Electricity Dataset  ← Advanced multi-season forecasting
-    ├── MSTL Research Paper (PDF)
-    └── Prophet Research Paper (PDF)
+├── 📂 Implementation/                   ← Real-world applications
+│   └── Brazilian_Logistics_Data(where_ARIMA_fails).ipynb
+│       └── Practical case study showing ARIMA limitations on complex data
+│
+├── 📂 Dataset/                          ← Large-scale real datasets
+│   └── Data_Vishnu.csv                  ← 46.9 MB resource demand data
+│
+├── 📂 MSTL Decomposition/               ← Advanced multi-seasonal techniques
+│   ├── MSTL(using_electricity_dataset).ipynb
+│   ├── Workforce_Forecasting(Version_1) (2).ipynb
+│   ├── MSTL research paper.pdf          ← Original MSTL algorithm paper
+│   └── prophet research paper.pdf       ← Facebook's Prophet forecasting tool
+│
+├── 📄 2207.03517v6.pdf                  ← Related research paper (~168 KB)
+│
+└── 🏗️ Hierarchical_Forecasting.ipynb    ← Advanced hierarchical forecasting methods
 ```
 
 ---
@@ -76,15 +88,24 @@ Whether you're a complete beginner or someone brushing up, follow this path:
 6. **Notebook 10** → Simple Exponential Smoothing (weighted averages)
 7. **Notebook 11** → Holt's model (handles trends)
 8. **Notebook 12** → Holt-Winters (handles trends **and** seasons)
-9. **Notebooks 15–16** → Autoregression & Moving Averages (the building blocks of ARIMA)
-10. **Notebook 17** → ARIMA — the industry workhorse model
-11. **Notebook 18** → SARIMA — ARIMA with seasonal awareness
+9. **Notebook 13** → Residuals (evaluating model performance)
+10. **Notebook 14** → Cross-validation (proper model evaluation)
+11. **Notebooks 15–16** → Autoregression & Moving Averages (the building blocks of ARIMA)
+12. **Notebook 17** → ARIMA — the industry workhorse model
+13. **Notebook 18** → SARIMA — ARIMA with seasonal awareness
+14. **Notebook 19** → Fourier Series & Harmonic Regression
 
 ### 🔴 Advanced
-> Ready for real-world complexity
+> Ready for real-world complexity and cutting-edge techniques
 
-12. **Implementation/** → See what happens when ARIMA breaks on messy logistics data
-13. **MSTL/** → Multi-Seasonal decomposition for data with multiple seasonal patterns (e.g., hourly electricity with daily AND weekly cycles)
+15. **Box-Cox Transform (Notebook 3)** → Data transformation for better model performance
+16. **Partial Autocorrelation (Notebook 7)** → Deep dive into ACF/PACF plots
+17. **Implementation/** → See what happens when ARIMA breaks on messy logistics data
+18. **Hierarchical_Forecasting.ipynb** → Forecasting with hierarchical data structures
+19. **MSTL Decomposition/** → Multi-Seasonal decomposition for data with multiple seasonal patterns
+    - Electricity dataset example (daily + weekly + yearly seasonality)
+    - Workforce forecasting applications
+20. **Research Papers** → Dive into MSTL and Prophet methodologies
 
 ---
 
@@ -95,13 +116,42 @@ Whether you're a complete beginner or someone brushing up, follow this path:
 | **Stationarity** | The data's average and variability don't change over time. Models need this to work well. |
 | **Seasonality** | A pattern that repeats at regular intervals — e.g., ice cream sales spike every summer. |
 | **Trend** | The long-term direction — going up, going down, or flat. |
-| **Autocorrelation** | How much today's value resembles yesterday's. High autocorrelation = very predictable data. |
+| **Decomposition** | Splitting a time series into its trend, seasonal, and random (residual) parts. |
+| **Autocorrelation (ACF)** | How much today's value resembles yesterday's. High autocorrelation = very predictable data. |
+| **Partial Autocorrelation (PACF)** | Autocorrelation after removing effects of intermediate lags. |
+| **Exponential Smoothing** | Forecasting by giving more weight to recent data than older data. |
+| **Residuals** | The difference between what the model predicted and what actually happened. Lower = better model. |
 | **ARIMA** | A powerful statistical model combining past values (AR) and past errors (MA) with differencing (I). |
 | **SARIMA** | ARIMA + seasonal patterns built in. |
-| **Exponential Smoothing** | Forecasting by giving more weight to recent data than older data. |
-| **Decomposition** | Splitting a time series into its trend, seasonal, and random (residual) parts. |
-| **MSTL** | A modern technique to handle data with *multiple* seasonal cycles (e.g., hour-of-day + day-of-week). |
-| **Residuals** | The difference between what the model predicted and what actually happened. Lower = better model. |
+| **Box-Cox Transform** | Mathematical transformation to stabilize variance and make data more suitable for modeling. |
+| **Fourier Series** | Using sine and cosine functions to model complex seasonal patterns. |
+| **Harmonic Regression** | Combining Fourier terms with regression for flexible seasonal modeling. |
+| **MSTL** | Multi-Seasonal-Trend decomposition using LOESS — handles data with *multiple* seasonal cycles. |
+| **Hierarchical Forecasting** | Forecasting with data organized in hierarchies (e.g., total sales → by region → by store). |
+| **Cross-Validation** | Properly evaluating models without data leakage using time-series-aware techniques. |
+
+---
+
+## 📊 Datasets Included
+
+| Dataset | Location | Size | Purpose |
+|---------|----------|------|---------|
+| `AirPassengers.csv` | Basic Time Series Analysis Concepts/ | 1.7 KB | Classic benchmark — monthly airline passengers (1949–1960) |
+| `Data_Vishnu.csv` | Dataset/ | 46.9 MB | Large-scale resource demand forecasting data for real-world practice |
+| Brazilian Logistics Data | Implementation/ | Embedded | Real freight/logistics time series — shows ARIMA's limitations |
+| Electricity Dataset | MSTL Decomposition/ | Embedded | Hourly electricity consumption with multiple seasonal patterns |
+
+---
+
+## 📚 Research Papers & References
+
+Three research papers are included for deeper learning:
+
+- **MSTL Paper** (`MSTL Decomposition/`) — The original research on Multi-Seasonal-Trend decomposition using LOESS
+- **Prophet Paper** (`MSTL Decomposition/`) — Facebook's forecasting tool designed for business time series with holidays and missing data
+- **2207.03517v6.pdf** — Additional forecasting research paper
+
+For hierarchical forecasting concepts, see: https://nixtlaverse.nixtla.io/hierarchicalforecast/
 
 ---
 
@@ -109,13 +159,18 @@ Whether you're a complete beginner or someone brushing up, follow this path:
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/Vishnu912py/time_series_forecasting.git
-cd time_series_forecasting
+git clone https://github.com/Vishnu912py/Resource-Demand-Forecasting.git
+cd Resource-Demand-Forecasting
 ```
 
 ### 2. Install dependencies
 ```bash
-pip install pandas numpy matplotlib statsmodels scikit-learn jupyter
+pip install pandas numpy matplotlib scipy statsmodels scikit-learn jupyter
+```
+
+For advanced notebooks, also install:
+```bash
+pip install prophet statsmodels mstl
 ```
 
 ### 3. Launch Jupyter
@@ -123,50 +178,90 @@ pip install pandas numpy matplotlib statsmodels scikit-learn jupyter
 jupyter notebook
 ```
 
-Then open any `.ipynb` file and run cells top to bottom. That's it!
+Then open any `.ipynb` file in the `Basic Time Series Analysis Concepts/` folder and run cells top to bottom.
 
 > 💡 **Tip:** Use [Google Colab](https://colab.research.google.com/) if you don't want to install anything locally — just upload the notebooks and run them in your browser for free.
 
 ---
 
-## 📊 Datasets Used
+## 📖 What Each Notebook Covers
 
-| Dataset | Used In | What It Is |
-|---------|---------|------------|
-| `AirPassengers.csv` | Basic concepts | Monthly airline passengers (1949–1960) — a classic benchmark dataset |
-| Brazilian Logistics Data | Implementation | Real freight/logistics time series — shows ARIMA's limitations on complex data |
-| Electricity Dataset | MSTL Decomposition | Hourly electricity consumption — demonstrates multi-seasonal patterns |
+### Basic Time Series Analysis Concepts
+
+| # | Notebook | Key Topics |
+|---|----------|-----------|
+| 1 | Intro to time series | Time series definition, types of data, basic visualization |
+| 2 | Stationarity | ADF test, making data stationary through differencing |
+| 3 | Box-Cox Transform | Variance stabilization techniques |
+| 4 | Seasonality | Identifying and quantifying seasonal patterns |
+| 5 | Decomposition | Classical decomposition (additive/multiplicative) |
+| 6 | Autocorrelation | ACF plots, interpreting autocorrelation |
+| 7 | Partial Autocorrelation | PACF plots, identifying model orders |
+| 9 | Basic Forecasting Techniques | Naive, seasonal naive, average methods |
+| 10 | Simple Exponential Smoothing | Weighted averaging for forecasting |
+| 11 | Holt's Linear Trend Model | Handling trends in time series |
+| 12 | Holt-Winters Forecasting | Combined trend and seasonal forecasting |
+| 13 | Residuals | Analyzing prediction errors for model diagnostics |
+| 14 | Cross-validation | Proper time-series validation techniques |
+| 15 | Autoregression | AR models and modeling with past values |
+| 16 | Moving Average Models | MA models and handling error terms |
+| 17 | ARIMA | Full ARIMA model implementation and tuning |
+| 18 | SARIMA | Seasonal ARIMA for complex patterns |
+| 19 | Fourier Series & Harmonic Regression | Advanced seasonal modeling techniques |
+
+### Advanced Topics
+
+| Notebook | Purpose |
+|----------|---------|
+| Hierarchical_Forecasting | Forecasting hierarchical data structures (total → regions → stores) |
+| MSTL (Electricity) | Multi-seasonal decomposition on real electricity demand data |
+| Workforce_Forecasting | Applying advanced techniques to workforce planning |
+| Brazilian_Logistics | Real-world case: why ARIMA fails and alternative approaches |
 
 ---
 
-## 🔬 Research Papers Included
-
-Two research papers are included in the `MSTL Decomposition/` folder for those who want to go deeper:
-
-- **MSTL Paper** — The original research on Multi-Seasonal-Trend decomposition using LOESS
-- **Prophet Paper** — Facebook's forecasting tool designed for business time series with holidays and missing data
-- **https://nixtlaverse.nixtla.io/hierarchicalforecast/examples/introduction.html**
----
-
-## 💡 Who Is This For?
-
-- 🎓 **Students** learning data science or machine learning
-- 📊 **Analysts** who work with sales, finance, or operational data
-- 🧑‍💻 **Developers** adding forecasting to their applications
-- 🤓 **Curious minds** who want to understand how predictions are made
-
----
-
-## 🙋 FAQ
+## 💡 Common Questions
 
 **Q: Do I need to be a math genius to understand this?**
-No. The notebooks focus on intuition and code. The math is there if you want it, but you can follow along without it.
+> No. The notebooks focus on intuition and code. The math is there if you want it, but you can follow along without it.
 
 **Q: What's the best model to use?**
-It depends on your data. Start with ARIMA for most cases. Use SARIMA if you have clear seasonal patterns. MSTL is great for complex, multi-layered seasonal data (like hourly readings).
+> It depends on your data. Start with ARIMA for most cases. Use SARIMA if you have clear seasonal patterns. Use MSTL for complex, multi-layered seasonal data (like hourly readings). Use Hierarchical forecasting when your data has natural hierarchies.
 
 **Q: Why does ARIMA "fail" on the Brazilian logistics data?**
-Real-world data is messy. The implementation notebook shows a case where the data has multiple overlapping patterns that ARIMA can't handle well — and introduces better approaches.
+> Real-world data is messy. The implementation notebook shows a case where the data has multiple overlapping patterns, missing values, and structural breaks that ARIMA can't handle well — and introduces better approaches like MSTL and hierarchical methods.
+
+**Q: How do I choose between ARIMA, SARIMA, and MSTL?**
+> - **ARIMA**: Simple trends, minimal seasonality
+> - **SARIMA**: One clear seasonal pattern (e.g., monthly data with yearly seasonality)
+> - **MSTL**: Multiple overlapping seasonal patterns (e.g., hourly data with daily AND weekly seasonality)
+
+**Q: Can I use these models for my own data?**
+> Yes! The notebooks teach reusable concepts. Replace the example datasets with your own CSV and follow the same workflow. Start with exploratory analysis, then try models in order of complexity.
+
+---
+
+## 🎯 Use Cases
+
+This repository prepares you to forecast:
+- 📦 **Inventory demand** — What products to stock
+- 💼 **Resource allocation** — Workforce, server capacity, power consumption
+- 💰 **Financial metrics** — Sales, revenue, stock prices
+- 📊 **Operational data** — Website traffic, API requests, customer arrivals
+- 🌡️ **Environmental data** — Temperature, pollution, weather patterns
+
+---
+
+## 📋 Skills You'll Gain
+
+By completing this repository, you'll be able to:
+- ✅ Recognize time series patterns (trend, seasonality, noise)
+- ✅ Test and transform data for modeling
+- ✅ Build and evaluate forecasting models
+- ✅ Choose the right model for your data
+- ✅ Handle real-world complexity (missing data, multiple seasons, hierarchies)
+- ✅ Interpret model diagnostics and residual analysis
+- ✅ Implement proper validation and backtesting
 
 ---
 
@@ -176,4 +271,8 @@ Give it a star ⭐ if you found it helpful — it helps others discover it too!
 
 ---
 
-*Made with 📚 + ☕ by [Vishnu912py](https://github.com/Vishnu912py)*
+## 📝 License & Attribution
+
+Created by [Vishnu912py](https://github.com/Vishnu912py)
+
+*Made with 📚 + ☕ + 🧠*
